@@ -19,16 +19,23 @@ else:
 def fillarray(array):
 	return[randint(a,b) for i in range(len(array))]
 
-
 def heapsort(array):
 	#Initializes a blank heap
 	heap = []
+	#Blank array to store sorted list
+	sortedarray =[]
+	#Loop through every element in original list
 	for element in array:
-		#Pushes every element in heap
-		heappush(heap,element)
-	#Returns a list of all elements popped off heap
-	return [heappop(heap) for i in range(len(heap))]
-
+		#Put all elements into a heap
+		heappush(heap, element)
+	#Loop for length of our heap
+	for i in range(len(heap)):
+		#Add top element of heap to the sorted array
+		#Heappop also heapifies after popping the element
+		sortedarray.append(heappop(heap))
+	#Returns our sorted list
+	return sortedarray
+		
 #Initializes a array of size n
 array = [0]*n
 #Fills our array with random values
