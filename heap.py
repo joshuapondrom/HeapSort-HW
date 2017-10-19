@@ -33,6 +33,15 @@ def heapsort(array):
 		#Add top element of heap to the sorted array
 		#Heappop also heapifies after popping the element
 		sortedarray.append(heappop(heap))
+
+		#Invariant to check if the final array is sorted
+		temparray = sortedarray
+		assert((sortedarray) == (sorted(temparray)))
+
+	#Invariant to check if final product is sorted
+	temparray = sortedarray
+	assert((temparray) == (sorted(sortedarray)))
+
 	#Returns our sorted list
 	return sortedarray
 		
